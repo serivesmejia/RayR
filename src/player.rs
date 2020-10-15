@@ -16,9 +16,13 @@ impl Player {
         }
     }
 
+    pub fn update(&mut self) {
+
+    }
+
     pub fn key_pressed(&mut self, key_code: Keycode) {
 
-        println!("Pressed: {}", key_code.name())
+        
 
     }
 

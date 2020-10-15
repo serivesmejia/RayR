@@ -1,7 +1,8 @@
 use std::collections::HashSet;
+
 use sdl2::keyboard::Keycode;
 
-use crate::player::Player;
+use crate::game::Game;
 
 pub struct KeyHandler {
 
@@ -19,17 +20,19 @@ impl KeyHandler {
 
     }
 
-    pub fn handle_keys(&mut self, keys: HashSet<Keycode>, player: &mut Player) {
+    pub fn handle_keys(&mut self, keys: HashSet<Keycode>, game: &mut Game) {
 
         let new_keys = &keys - &self.prev_keys;
         let old_keys = &self.prev_keys - &keys;
     
         for key in new_keys {
-            player.key_pressed(key)
+            game.key_pressed(key);
+            game.player.key_pressed(key)
         }
     
         for key in old_keys {
-            player.key_released(key)
+            game.key_released(key);
+            game.player.key_pressed(key)
         }
     
         self.prev_keys = keys;
