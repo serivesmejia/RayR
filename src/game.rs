@@ -19,7 +19,7 @@ impl Game {
     }
 
     pub fn update(&mut self) {
-
+    
     }
 
     pub fn key_pressed(&mut self, key_code: Keycode) {

@@ -20,7 +20,7 @@ fn main() -> Result<(), String> {
     let mut canvas = window.into_canvas().build()
                     .expect("Could not make a canvas");
 
-    canvas.set_draw_color(Color::RGB(0, 255, 255));
+    canvas.set_draw_color(Color::RGB(0, 0, 0));
 
     let mut game = Game::new();
 
